@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--projecttitle--><title>Tour 360</title><!--projecttitle-end-->
+		<!--projectdescription--><meta name="description" content="Baruuuuurururuurru"><!--projectdescription-end-->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+		
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+		<!-- Insert this line above script imports  -->
+		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+		
+		<script src="imagedata.js"></script>
+		<script src="jquery.js"></script>
+		<script src="three.min.js"></script>
+		<script src="panolens.min.js"></script>
+		
+		<!-- Insert this line after script imports -->
+		<script>if (window.module) module = window.module;</script>
+		
+		<style>
+		
+			
+						
+			/* SCROLLBAR STYLING */
+			/* width */
+			::-webkit-scrollbar {
+				width: 0.25em;
+				height: 0.25em;
+			}
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: #2c3643; 
+			}
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: #0d9e59; 
+				transition: background .5s;
+			}
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #00e075; 
+			}
+
+
+			html, body {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: #000;
+				color; black;
+			}
+
+			a:link, a:visited{
+				color: #bdc3c7;	
+			}
+
+			.fullwrapper{
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: black;
+			}
+			
+			#container {
+                width: 100%;
+                height: 100%;
+            }
+			
+			#tmp{
+				position: fixed;
+				top: 0;
+				left: 0; 
+				right: 0;
+				bottom: 0;
+				padding: 3em;
+				background-color: rgba(0,0,0,.5);
+				backdrop-filter: blur(5px);
+				display: none;
+			}
+		</style>
+	</head>
+	<body id="body">
+	    <div id="container" style="color: black;"></div>
+    	
+		
+		
+		<!--customhtml--><div class='customhotspot' id='Alur1'></div><div class='customhotspot' id='Alur2'></div><div class='customhotspot' id='Alur3'></div><div class='customhotspot' id='Alur4'></div><div class='customhotspot' id='Alur5'></div><div class='customhotspot' id='Alur6'></div><div class='customhotspot' id='Alur7'></div><div class='customhotspot' id='Alur8'></div><div class='customhotspot' id='Alur9'></div><div class='customhotspot' id='Alur3Cxp4W'></div><div class='customhotspot' id='alur10yard'></div><!--customhtml-end-->
+		
+		<div id="tmp">
+			<div style="width: 100%; height: 100%; overflow: hidden; overflow-y: auto; box-sizing: border-box; position: relative;" id="tmpcontent"></div>
+			<div class="mediaclosebutton" onclick="hideTemp()"><i class="fa fa-times-circle"></i></div>
+		</div>
+
+		<div id="loading" class="fullwrapper" style="display: table; width: 100%; height: 100%;">
+    		<div style="display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 30px; padding: 50px;">
+    			<!--loadingtext-->Loading...<!--loadingtext-end-->
+    		</div>
+    	</div>
+		
+    	<script>
+			
+            var container = document.querySelector( '#container' );
+			/*panolens*/
+var viewer = new PANOLENS.Viewer( { container: container , controlBar: false,  output: 'console' , autoHideInfospot: false, } );
+/*panolens-end*/
+			
+			viewer.addUpdateCallback(function(){});
+			
+			/*panoramas*/
+var Alur1 = new PANOLENS.ImagePanorama( "panoramas/Alur1.jpeg" );
+			Alur1.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			Alur1.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			Alur1.addEventListener('click', function(e){
+			});
+
+var infospotAlur10 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur10.position.set( 4921.92, 861.54, 14.03 );
+					Alur1.add(infospotAlur10);
+infospotAlur10.addEventListener('click', function(){
+ChangePanorama('Alur2');
+});
+viewer.add( Alur1 );
+var Alur2 = new PANOLENS.ImagePanorama( "panoramas/Alur2.jpeg" );
+			Alur2.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			Alur2.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			Alur2.addEventListener('click', function(e){
+			});
+
+var infospotAlur20 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur20.position.set( -4516.58, -361.10, 2102.85 );
+					Alur2.add(infospotAlur20);
+infospotAlur20.addEventListener('click', function(){
+ChangePanorama('Alur1');
+});
+var infospotAlur21 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur21.position.set( 3426.38, -261.62, 3620.48 );
+					Alur2.add(infospotAlur21);
+infospotAlur21.addEventListener('click', function(){
+ChangePanorama('Alur4');
+});
+var infospotAlur22 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur22.position.set( 4926.50, -89.02, -791.46 );
+					Alur2.add(infospotAlur22);
+infospotAlur22.addEventListener('click', function(){
+ChangePanorama('Alur8');
+});
+var infospotAlur23 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur23.position.set( 3816.93, 988.37, -3057.91 );
+					Alur2.add(infospotAlur23);
+infospotAlur23.addEventListener('click', function(){
+ChangePanorama('Alur9');
+});
+var infospotAlur24 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur24.position.set( 4803.28, -121.76, -1347.49 );
+					Alur2.add(infospotAlur24);
+infospotAlur24.addEventListener('click', function(){
+ChangePanorama('Alur7');
+});
+viewer.add( Alur2 );
+var Alur3 = new PANOLENS.ImagePanorama( "panoramas/Alur3.jpeg" );
+			Alur3.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			Alur3.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			Alur3.addEventListener('click', function(e){
+			});
+
+var infospotAlur30 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur30.position.set( -1722.86, -144.02, 4680.99 );
+					Alur3.add(infospotAlur30);
+infospotAlur30.addEventListener('click', function(){
+ChangePanorama('Alur4');
+});
+viewer.add( Alur3 );
+var Alur4 = new PANOLENS.ImagePanorama( "panoramas/Alur4.jpeg" );
+			Alur4.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			Alur4.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			Alur4.addEventListener('click', function(e){
+			});
+
+var infospotAlur40 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur40.position.set( 4703.90, -201.04, -1656.94 );
+					Alur4.add(infospotAlur40);
+infospotAlur40.addEventListener('click', function(){
+ChangePanorama('Alur3');
+});
+var infospotAlur41 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur41.position.set( -2936.91, -244.64, -4034.37 );
+					Alur4.add(infospotAlur41);
+infospotAlur41.addEventListener('click', function(){
+ChangePanorama('Alur2');
+});
+viewer.add( Alur4 );
+var Alur5 = new PANOLENS.ImagePanorama( "panoramas/Alur5.jpeg" );
+			Alur5.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			Alur5.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			Alur5.addEventListener('click', function(e){
+			});
+
+var infospotAlur50 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur50.position.set( 2663.93, -201.22, -4214.25 );
+					Alur5.add(infospotAlur50);
+infospotAlur50.addEventListener('click', function(){
+ChangePanorama('Alur9');
+});
+viewer.add( Alur5 );
+var Alur6 = new PANOLENS.ImagePanorama( "panoramas/Alur6.jpeg" );
+			Alur6.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			Alur6.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			Alur6.addEventListener('click', function(e){
+			});
+
+var infospotAlur60 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur60.position.set( 544.58, -779.36, 4907.23 );
+					Alur6.add(infospotAlur60);
+infospotAlur60.addEventListener('click', function(){
+ChangePanorama('Alur9');
+});
+var infospotAlur61 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur61.position.set( -3249.13, -707.92, 3726.08 );
+					Alur6.add(infospotAlur61);
+infospotAlur61.addEventListener('click', function(){
+ChangePanorama('Alur3Cxp4W');
+});
+viewer.add( Alur6 );
+var Alur7 = new PANOLENS.ImagePanorama( "panoramas/Alur7.jpeg" );
+			Alur7.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			Alur7.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			Alur7.addEventListener('click', function(e){
+			});
+
+var infospotAlur70 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur70.position.set( 4210.64, 90.12, -2677.50 );
+					Alur7.add(infospotAlur70);
+infospotAlur70.addEventListener('click', function(){
+ChangePanorama('Alur2');
+});
+var infospotAlur71 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur71.position.set( 3279.18, -295.91, 3754.62 );
+					Alur7.add(infospotAlur71);
+infospotAlur71.addEventListener('click', function(){
+ChangePanorama('alur10yard');
+});
+viewer.add( Alur7 );
+var Alur8 = new PANOLENS.ImagePanorama( "panoramas/Alur8.jpeg" );
+			Alur8.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			Alur8.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			Alur8.addEventListener('click', function(e){
+			});
+
+var infospotAlur80 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur80.position.set( -1728.68, 494.37, -4655.39 );
+					Alur8.add(infospotAlur80);
+infospotAlur80.addEventListener('click', function(){
+ChangePanorama('Alur2');
+});
+viewer.add( Alur8 );
+var Alur9 = new PANOLENS.ImagePanorama( "panoramas/Alur9.jpeg" );
+			Alur9.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			Alur9.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			Alur9.addEventListener('click', function(e){
+			});
+
+var infospotAlur90 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur90.position.set( -2995.65, -334.79, 3982.25 );
+					Alur9.add(infospotAlur90);
+infospotAlur90.addEventListener('click', function(){
+ChangePanorama('Alur5');
+});
+var infospotAlur91 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur91.position.set( -3666.37, -504.88, 3354.42 );
+					Alur9.add(infospotAlur91);
+infospotAlur91.addEventListener('click', function(){
+ChangePanorama('Alur6');
+});
+var infospotAlur92 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur92.position.set( -3060.66, -1467.68, 3660.10 );
+					Alur9.add(infospotAlur92);
+infospotAlur92.addEventListener('click', function(){
+ChangePanorama('Alur2');
+});
+viewer.add( Alur9 );
+var Alur3Cxp4W = new PANOLENS.ImagePanorama( "panoramas/Alur3Cxp4W.jpeg" );
+			Alur3Cxp4W.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			Alur3Cxp4W.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			Alur3Cxp4W.addEventListener('click', function(e){
+			});
+
+var infospotAlur3Cxp4W0 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotAlur3Cxp4W0.position.set( -1757.08, -392.83, 4657.35 );
+					Alur3Cxp4W.add(infospotAlur3Cxp4W0);
+infospotAlur3Cxp4W0.addEventListener('click', function(){
+ChangePanorama('Alur6');
+});
+viewer.add( Alur3Cxp4W );
+var alur10yard = new PANOLENS.ImagePanorama( "panoramas/alur10yard.jpeg" );
+			alur10yard.addEventListener('progress', function(e){
+				$("#loading").show();
+			});
+			alur10yard.addEventListener('load', function(e){
+				//$("#loading").fadeOut();
+			});
+			alur10yard.addEventListener('click', function(e){
+			});
+
+var infospotalur10yard0 = new PANOLENS.Infospot( 512, hotspotIcons[11].data, true );
+					infospotalur10yard0.position.set( 4457.07, -41.93, 2247.23 );
+					alur10yard.add(infospotalur10yard0);
+infospotalur10yard0.addEventListener('click', function(){
+ChangePanorama('Alur7');
+});
+viewer.add( alur10yard );
+$(document).ready(function(){ ChangePanorama('Alur1'); });
+
+/*panoramas-end*/
+            
+			
+			function hideTemp(){
+				$("#tmp").fadeOut();
+				setTimeout(function(){
+					$("#tmpcontent").html("");
+				},1000);
+			}
+			
+			function showMedia(type, content){
+				switch(type){
+					case 1 :
+						//Image
+						$("#tmpcontent").html("<img src='"+content+"' style='width: 100%;'>");
+						$("#tmp").fadeIn();
+						break;
+					case 2 :
+						//Video
+						$("#tmpcontent").html("<video id='webvideo' controls autoplay style='width: 100%; height: 100%;'><source src='" +content+ "' type='video/mp4'> Your browser does not support the video tag. </video>");
+						$("#tmp").fadeIn();
+						break;
+					case 3 :
+						//Audio
+						$("#tmpcontent").html("<audio controls style='width: 100%;'><source src='"+content+"' type='audio/ogg'>Your browser does not support the audio tag.</audio>");
+						$("#tmp").fadeIn();
+						break;
+					case 4 :
+						//PDF
+						$("#tmpcontent").html("<iframe src='pdfjs/web/viewer.html?file=../../"+content+"' style='width: 100%; height: 99%;'></iframe>");
+						$("#tmp").fadeIn();
+						break;
+				}
+			}
+			
+			
+			
+			//Update Callback
+			viewer.addUpdateCallback(function(){
+				
+				/*viewerupdatecallback*/
+if(viewer.panorama == Alur1){
+}
+
+if(viewer.panorama == Alur2){
+}
+
+if(viewer.panorama == Alur3){
+}
+
+if(viewer.panorama == Alur4){
+}
+
+if(viewer.panorama == Alur5){
+}
+
+if(viewer.panorama == Alur6){
+}
+
+if(viewer.panorama == Alur7){
+}
+
+if(viewer.panorama == Alur8){
+}
+
+if(viewer.panorama == Alur9){
+}
+
+if(viewer.panorama == Alur3Cxp4W){
+}
+
+if(viewer.panorama == alur10yard){
+}
+/*viewerupdatecallback-end*/
+				
+				
+			});
+			
+			
+			
+			var hotspotsvisible = true;
+			function ShowMyInfospot(hs, elid){
+				var thehs = toScreenPosition(hs);
+				if(thehs.z < 1){
+					$("#" + elid).css({
+						"top" : (thehs.y - ($("#" + elid).height()/2)) + "px",
+						"left" : (thehs.x - ($("#" + elid).width()/2)) + "px",
+					});
+					if(hotspotsvisible)
+						$("#" + elid).show();
+				}else{
+					$("#" + elid).hide();
+				}
+				
+			}
+			
+			function toScreenPosition(obj)
+			{
+				var vector = new THREE.Vector3();
+				var widthHalf = 0.5 * innerWidth;
+				var heightHalf = 0.5 * innerHeight;
+				
+				//obj.updateMatrixWorld();				
+				vector.setFromMatrixPosition(obj.matrixWorld);
+				
+				
+				vector.project(viewer.camera);
+
+				vector.x = ( vector.x * widthHalf ) + widthHalf;
+				vector.y = - ( vector.y * heightHalf ) + heightHalf;
+
+				
+				return { 
+					x: vector.x,
+					y: vector.y,
+					z: vector.z,
+				};
+
+			};
+			
+			var currentPanorama;
+			function ChangePanorama(panorama){
+				currentPanorama = panorama;
+				HideInfospots(); 
+				$("#loading").fadeIn();
+				//$(".customhotspot").fadeOut();
+				setTimeout(function(){
+					viewer.setPanorama(window[panorama]);
+				}, 100);
+				setTimeout(function(){
+					$("#" + panorama).fadeIn();
+					$("#loading").fadeOut();
+				}, 1000);
+				
+			}
+			
+			
+			
+			function HideInfospots(){
+				$(".customhotspot").fadeOut();
+			}
+
+			/*customjs*//*customjs-end*/
+        </script>
+	</body>
+</html>
